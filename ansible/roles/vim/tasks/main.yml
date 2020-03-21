@@ -1,0 +1,10 @@
+---
+- name: Brew packages
+  homebrew:
+    name: "{{ packages }}"
+    state: latest
+  vars:
+    packages:
+     - vim
+     - fzf
+     - ag

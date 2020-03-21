@@ -1,0 +1,20 @@
+---
+- name: Brew packages
+  homebrew:
+    name: "{{ packages }}"
+    state: latest
+  vars:
+    packages:
+     - tmux
+     - ranger
+
+- name: Check if ohmyzsh is installed
+  stat:
+    path: ~/.oh-my-zsh
+  register: ohmyzsh
+
+- name: Install ohmyzsh
+  when: not ohmyzsh.stat.exists
+  git:
+    repo: https://github.com/robbyrussell/oh-my-zsh
+    dest: ~/.oh-my-zsh
