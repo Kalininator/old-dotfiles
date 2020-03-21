@@ -2,6 +2,9 @@ export VISUAL=vim
 export EDITOR=$VISUAL
 
 export TERM="xterm-256color"
+export ZSH="/Users/kal/.oh-my-zsh"
+ZSH_THEME="miloshadzic"
+source $ZSH/oh-my-zsh.sh
 
 unsetopt share_history
 
