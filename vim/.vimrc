@@ -21,30 +21,35 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'w0rp/ale'
 Plug 'itchyny/lightline.vim'
+
 Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'ryanoasis/vim-devicons'
+
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
+
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'pangloss/vim-javascript'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'chiedo/vim-case-convert'
+
 Plug 'kalininator/md-img-paste.vim'
 Plug 'kalininator/connectorcli.vim'
+
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-json'
+
 Plug 'sheerun/vim-polyglot'
 Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-Plug 'jparise/vim-graphql'
+" Plug 'honza/vim-snippets'
+" Plug 'jparise/vim-graphql'
 
-Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'ryanoasis/vim-devicons'
 call plug#end()
 filetype plugin indent on
 
@@ -57,6 +62,8 @@ let g:UltiSnipsEditSplit="vertical"
 let g:ale_fixers = {'javascript': [ 'eslint'], 'json': 'eslint', 'terraform': 'terraform', 'typescript': ['eslint']}
 let g:ale_fix_on_save = 1
 let g:ale_javascript_prettier_use_local_config = 1
+let g:ale_sign_error = '❌'
+let g:ale_sign_warning = '⚠️'
 nmap <leader>d <Plug>(ale_fix)
 
 
@@ -70,6 +77,17 @@ nmap ; :Buffers<CR>
 nmap <Leader>a :Ag<CR>
 nmap <silent> <Leader>gd <Plug>(coc-definition)
 nmap <silent> <Leader>gr <Plug>(coc-rename)
+
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
 
 autocmd FileType markdown nmap <silent> <leader>p :call mdip#MarkdownClipboardImage()<CR>
 nmap <silent> <leader>r :call connectorcli#run()<CR>
