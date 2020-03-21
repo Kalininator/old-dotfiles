@@ -9,9 +9,7 @@ endif
 
 let mapleader = " "
 set backspace=indent,eol,start
-
-" store swap files in tmp
-set directory^=$HOME/.vim/tmp//
+set noswapfile
 
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
