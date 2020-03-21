@@ -76,36 +76,3 @@ snippet {obj
 	},
 },
 endsnippet
-
-snippet {{schema
-module.exports = {
-	description: '$1',
-	input: {
-		$2
-	},
-};
-endsnippet
-
-snippet {{get
-module.exports = {
-	method: 'get',
-	url: '$1',
-	query: {
-		$2
-	},
-}
-endsnippet
-
-snippet {{post
-module.exports = {
-	method: 'post',
-	url: '$1',
-	data: {
-		$2
-	},
-}
-endsnippet
-
-snippet {{output
-module.exports = (params) => falafel.$1.$2(params);
-endsnippet
