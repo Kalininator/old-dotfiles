@@ -1,5 +1,7 @@
 set nocompatible
 filetype off
+set encoding=utf8
+let g:airline_powerline_fonts = 1
 
 if &term =~ '256color'
     set t_ut=
@@ -20,6 +22,7 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'w0rp/ale'
+Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
@@ -37,9 +40,12 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'jparise/vim-graphql'
 
+
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 filetype plugin indent on
 
@@ -116,6 +122,11 @@ set nofoldenable
 "Search stuff
 set ignorecase
 set smartcase
+set noshowmode
+set noshowcmd
+set shortmess+=F
 
+" set background dark
+colorscheme molokai
 
 

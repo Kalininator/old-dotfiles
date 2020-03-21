@@ -8,6 +8,18 @@
      - tmux
      - ranger
 
+- homebrew_tap:
+    name: homebrew/cask-fonts
+    state: present
+
+- name: Brew cask packages
+  homebrew_cask:
+    name: "{{ packages }}"
+    state: latest
+  vars:
+    packages:
+     - font-hack-nerd-font
+
 - name: Check if ohmyzsh is installed
   stat:
     path: ~/.oh-my-zsh
