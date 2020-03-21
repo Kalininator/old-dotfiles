@@ -38,8 +38,6 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'kalininator/md-img-paste.vim'
 Plug 'kalininator/connectorcli.vim'
 
-" Plug 'SirVer/ultisnips'
-
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
@@ -47,15 +45,11 @@ Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
 
 Plug 'sheerun/vim-polyglot'
 
-
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
 call plug#end()
 filetype plugin indent on
-
-" let g:UltiSnipsJumpForwardTrigger="<tab>"                                       
-" let g:UltiSnipsJumpBackwardTrigger="<s-tab>"   
 
 let g:ale_fixers = {
   \    'javascript': ['eslint'],
@@ -68,7 +62,6 @@ let g:ale_javascript_prettier_use_local_config = 1
 let g:ale_sign_error = '❌'
 let g:ale_sign_warning = '⚠️'
 nmap <leader>d <Plug>(ale_fix)
-
 
 " FZF files
 " nmap <Leader>F :GFiles<CR>
@@ -168,7 +161,6 @@ set listchars=tab:\|\
 
 syntax on
 set cursorline
-" set colorcolumn=81
 
 set foldmethod=syntax
 set nofoldenable
@@ -180,7 +172,6 @@ set noshowmode
 set noshowcmd
 set shortmess+=F
 
-" set background dark
 colorscheme molokai
 
 
