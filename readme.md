@@ -1,3 +1,4 @@
+## Installation
 ```
 git clone https://github.com/Kalininator/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles/ansible
