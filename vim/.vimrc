@@ -98,12 +98,14 @@ autocmd vimenter * if !argc() | NERDTree | endif
 "Ctrl n toggles nerdtree
 map <silent> <C-n> :NERDTreeToggle<CR>
 " enable line numbers
-let NERDTreeShowLineNumbers=1
+" let NERDTreeShowLineNumbers=1
 " make sure relative line numbers are used
-autocmd FileType nerdtree setlocal relativenumber
+" autocmd FileType nerdtree setlocal relativenumber
 let NERDTreeMinimalUI=1
 let NERDTreeDirArrows = 1
-let NERDTreeIgnore=['node_modules']
+" let NERDTreeIgnore=['node_modules']
+let g:NERDTreeDirArrowExpandable = ''
+let g:NERDTreeDirArrowCollapsible = ''
 
 set number
 set relativenumber
