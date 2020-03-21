@@ -38,7 +38,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'kalininator/md-img-paste.vim'
 Plug 'kalininator/connectorcli.vim'
 
-Plug 'SirVer/ultisnips'
+" Plug 'SirVer/ultisnips'
 
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
@@ -54,11 +54,8 @@ Plug 'junegunn/fzf.vim'
 call plug#end()
 filetype plugin indent on
 
-let g:UltiSnipsExpandTrigger="<Leader> Q"
 " let g:UltiSnipsJumpForwardTrigger="<tab>"                                       
 " let g:UltiSnipsJumpBackwardTrigger="<s-tab>"   
-let g:UltiSnipsSnippetsDir = "~/.vim/ultisnips"
-let g:UltiSnipsEditSplit="vertical"
 
 let g:ale_fixers = {
   \    'javascript': ['eslint'],
