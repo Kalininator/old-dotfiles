@@ -1,4 +1,13 @@
 ---
+
+- homebrew_tap:
+    name: homebrew/cask-fonts
+    state: present
+
+- homebrew_tap:
+    name: sambadevi/powerlevel9k
+    state: present
+
 - name: Brew packages
   homebrew:
     name: "{{ packages }}"
@@ -7,10 +16,7 @@
     packages:
      - tmux
      - ranger
-
-- homebrew_tap:
-    name: homebrew/cask-fonts
-    state: present
+     - powerlevel9k
 
 - name: Brew cask packages
   homebrew_cask:
