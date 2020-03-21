@@ -38,6 +38,7 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'jparise/vim-graphql'
 
+Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -57,6 +58,7 @@ let g:ale_fixers = {'javascript': [ 'eslint'], 'json': 'eslint', 'terraform': 't
 let g:ale_fix_on_save = 1
 let g:ale_javascript_prettier_use_local_config = 1
 nmap <leader>d <Plug>(ale_fix)
+
 
 " FZF files
 nmap <Leader>F :GFiles<CR>
