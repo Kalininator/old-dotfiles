@@ -31,20 +31,21 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
+Plug 'editorconfig/editorconfig-vim'
 
 Plug 'christoomey/vim-tmux-navigator'
 
 Plug 'kalininator/md-img-paste.vim'
 Plug 'kalininator/connectorcli.vim'
 
+Plug 'SirVer/ultisnips'
+
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-json'
+Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
 
 Plug 'sheerun/vim-polyglot'
-Plug 'SirVer/ultisnips'
-" Plug 'honza/vim-snippets'
-" Plug 'jparise/vim-graphql'
 
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -53,13 +54,18 @@ Plug 'junegunn/fzf.vim'
 call plug#end()
 filetype plugin indent on
 
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"                                       
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"   
+let g:UltiSnipsExpandTrigger="<Leader> Q"
+" let g:UltiSnipsJumpForwardTrigger="<tab>"                                       
+" let g:UltiSnipsJumpBackwardTrigger="<s-tab>"   
 let g:UltiSnipsSnippetsDir = "~/.vim/ultisnips"
 let g:UltiSnipsEditSplit="vertical"
 
-let g:ale_fixers = {'javascript': [ 'eslint'], 'json': 'eslint', 'terraform': 'terraform', 'typescript': ['eslint']}
+let g:ale_fixers = {
+  \    'javascript': ['eslint'],
+  \    'typescript': ['eslint'],
+  \    'json': ['eslint'],
+  \    'terraform': ['terraform'],
+\}
 let g:ale_fix_on_save = 1
 let g:ale_javascript_prettier_use_local_config = 1
 let g:ale_sign_error = '❌'
@@ -68,13 +74,16 @@ nmap <leader>d <Plug>(ale_fix)
 
 
 " FZF files
-nmap <Leader>F :GFiles<CR>
+" nmap <Leader>F :GFiles<CR>
 nmap <Leader>f :Files<CR>
 " FZF Lines
 nmap <Leader>l :BLines<CR>
 nmap <Leader>L :Lines<CR>
 nmap ; :Buffers<CR>
 nmap <Leader>a :Ag<CR>
+
+let g:coc_global_extensions = ['coc-ultisnips']
+
 nmap <silent> <Leader>gd <Plug>(coc-definition)
 nmap <silent> <Leader>gr <Plug>(coc-rename)
 
@@ -88,6 +97,50 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
+
+" Use tab for trigger completion with characters ahead and navigate.
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config.
+" inoremap <silent><expr> <TAB>
+"       \ pumvisible() ? "\<C-n>" :
+"       \ <SID>check_back_space() ? "\<TAB>" :
+"       \ coc#refresh()
+
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? coc#_select_confirm() :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+let g:coc_snippet_next = '<tab>'
+
+" Use <c-space> to trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()
+
+" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
+" position. Coc only does snippet and additional edit on confirm.
+if has('patch8.1.1068')
+  " Use `complete_info` if your (Neo)Vim version supports it.
+  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+else
+  imap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+endif
+
+
+" function! s:check_back_space() abort
+"   let col = col('.') - 1
+"   return !col || getline('.')[col - 1]  =~# '\s'
+" endfunction
+
+" let g:coc_snippet_next = '<tab>'
+
+
 
 autocmd FileType markdown nmap <silent> <leader>p :call mdip#MarkdownClipboardImage()<CR>
 nmap <silent> <leader>r :call connectorcli#run()<CR>
@@ -103,7 +156,7 @@ map <silent> <C-n> :NERDTreeToggle<CR>
 " autocmd FileType nerdtree setlocal relativenumber
 let NERDTreeMinimalUI=1
 let NERDTreeDirArrows = 1
-" let NERDTreeIgnore=['node_modules']
+let NERDTreeIgnore=['node_modules']
 let g:NERDTreeDirArrowExpandable = ''
 let g:NERDTreeDirArrowCollapsible = ''
 

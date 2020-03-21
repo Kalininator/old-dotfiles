@@ -1,0 +1,7 @@
+{
+	"snippets.ultisnips.directories": [ "~/.vim/ultisnips"],
+	"snippets.userSnippetsDirectory": "~/.vim/ultisnips",
+	"snippets.extends": {
+		"typescript": ["javascript"]
+	}
+}
