@@ -130,6 +130,7 @@ map <silent> <C-n> :NERDTreeToggle<CR>
 " autocmd FileType nerdtree setlocal relativenumber
 let NERDTreeMinimalUI=1
 let NERDTreeDirArrows = 1
+let NERDTreeQuitOnOpen=1
 let NERDTreeIgnore=['node_modules']
 let g:NERDTreeDirArrowExpandable = ''
 let g:NERDTreeDirArrowCollapsible = ''
