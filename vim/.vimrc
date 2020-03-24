@@ -32,6 +32,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'jiangmiao/auto-pairs'
 
 Plug 'christoomey/vim-tmux-navigator'
 
@@ -130,7 +131,7 @@ map <silent> <C-n> :NERDTreeToggle<CR>
 " autocmd FileType nerdtree setlocal relativenumber
 let NERDTreeMinimalUI=1
 let NERDTreeDirArrows = 1
-let NERDTreeQuitOnOpen=1
+" let NERDTreeQuitOnOpen=1
 let NERDTreeIgnore=['node_modules']
 let g:NERDTreeDirArrowExpandable = ''
 let g:NERDTreeDirArrowCollapsible = ''
