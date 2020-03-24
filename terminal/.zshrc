@@ -5,6 +5,8 @@ export TERM="xterm-256color"
 export ZSH="/Users/kal/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
 
+export PATH=${HOME}/go/bin:$PATH
+
 source /usr/local/opt/powerlevel9k/powerlevel9k.zsh-theme
 ZSH_THEME="powerlevel9k/powerlevel9k"
 POWERLEVEL9K_MODE='nerdfont-complete'
