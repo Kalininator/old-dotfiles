@@ -57,6 +57,7 @@ let g:ale_fixers = {
   \    'typescript': ['eslint'],
   \    'json': ['eslint'],
   \    'terraform': ['terraform'],
+  \    'go': ['gofmt'],
 \}
 let g:ale_fix_on_save = 1
 let g:ale_javascript_prettier_use_local_config = 1
@@ -73,7 +74,7 @@ nmap <Leader>L :Lines<CR>
 nmap ; :Buffers<CR>
 nmap <Leader>a :Ag<CR>
 
-let g:coc_global_extensions = ['coc-ultisnips']
+let g:coc_global_extensions = ['coc-ultisnips', 'coc-go']
 
 nmap <silent> <Leader>gd <Plug>(coc-definition)
 nmap <silent> <Leader>gr <Plug>(coc-rename)

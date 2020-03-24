@@ -6,6 +6,9 @@ export ZSH="/Users/kal/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
 
 export PATH=${HOME}/go/bin:$PATH
+# export GOPATH="${HOME}/.go"
+# export GOROOT="$(brew --prefix golang)/libexec"
+# export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 
 source /usr/local/opt/powerlevel9k/powerlevel9k.zsh-theme
 ZSH_THEME="powerlevel9k/powerlevel9k"
