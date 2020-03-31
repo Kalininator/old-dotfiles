@@ -40,9 +40,9 @@ Plug 'kalininator/md-img-paste.vim'
 Plug 'kalininator/connectorcli.vim'
 
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
-Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
+" Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
+" Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
+" Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
 
 Plug 'sheerun/vim-polyglot'
 
@@ -52,8 +52,10 @@ Plug 'junegunn/fzf.vim'
 call plug#end()
 filetype plugin indent on
 
+let g:ale_linter_aliases = {'typescriptreact': 'typescript'}
 let g:ale_fixers = {
   \    'javascript': ['eslint'],
+  \    'typescriptreact': ['eslint'],
   \    'typescript': ['eslint'],
   \    'json': ['eslint'],
   \    'terraform': ['terraform'],
@@ -74,7 +76,19 @@ nmap <Leader>L :Lines<CR>
 nmap ; :Buffers<CR>
 nmap <Leader>a :Ag<CR>
 
-let g:coc_global_extensions = ['coc-ultisnips', 'coc-go']
+let g:coc_global_extensions = ['coc-ultisnips', 'coc-go', 'coc-tsserver', 'coc-json', 'coc-snippets']
+
+" " Run jest for current project
+" command! -nargs=0 Jest :call  CocAction('runCommand', 'jest.projectTest')
+
+" " Run jest for current file
+" command! -nargs=0 JestCurrent :call  CocAction('runCommand', 'jest.fileTest', ['%'])
+
+" " Run jest for current test
+" nnoremap <leader>te :call CocAction('runCommand', 'jest.singleTest')<CR>
+
+" " Init jest in current cwd, require global jest command exists
+" command! JestInit :call CocAction('runCommand', 'jest.init')
 
 nmap <silent> <Leader>gd <Plug>(coc-definition)
 nmap <silent> <Leader>gr <Plug>(coc-rename)
