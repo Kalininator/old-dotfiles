@@ -28,6 +28,7 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ryanoasis/vim-devicons'
 
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
@@ -35,6 +36,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'jiangmiao/auto-pairs'
 
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'morhetz/gruvbox'
 
 Plug 'kalininator/md-img-paste.vim'
 Plug 'kalininator/connectorcli.vim'
@@ -189,6 +191,7 @@ set noshowmode
 set noshowcmd
 set shortmess+=F
 
-colorscheme molokai
+" colorscheme molokai
+colorscheme gruvbox
 
 
