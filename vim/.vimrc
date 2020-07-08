@@ -94,6 +94,8 @@ let g:coc_global_extensions = ['coc-ultisnips', 'coc-go', 'coc-tsserver', 'coc-j
 
 nmap <silent> <Leader>gd <Plug>(coc-definition)
 nmap <silent> <Leader>gr <Plug>(coc-rename)
+nmap <leader>ac  <Plug>(coc-codeaction)
+nmap <leader>qf  <Plug>(coc-fix-current)
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -157,8 +159,8 @@ set number
 set relativenumber
 
 set smarttab
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 
 
 let root = systemlist('git rev-parse --show-toplevel')[0]
@@ -175,8 +177,8 @@ command! -bang -nargs=* Ag
 inoremap kj <Esc>
 
 "show tabs
-set list
-set listchars=tab:\|\ 
+" set list
+" set listchars=tab:\|\ 
 
 syntax on
 set cursorline
