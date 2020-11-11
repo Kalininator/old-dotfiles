@@ -62,6 +62,7 @@ let g:ale_fixers = {
   \    'json': ['eslint'],
   \    'terraform': ['terraform'],
   \    'go': ['gofmt'],
+  \    'rust': ['rustfmt']
 \}
 let g:ale_fix_on_save = 1
 let g:ale_javascript_prettier_use_local_config = 1
@@ -70,15 +71,15 @@ let g:ale_sign_warning = '⚠️'
 nmap <leader>d <Plug>(ale_fix)
 
 " FZF files
-" nmap <Leader>F :GFiles<CR>
-nmap <Leader>f :Files<CR>
+nmap <Leader>f :GFiles<CR>
+nmap <Leader>F :Files<CR>
 " FZF Lines
 nmap <Leader>l :BLines<CR>
 nmap <Leader>L :Lines<CR>
 nmap ; :Buffers<CR>
 nmap <Leader>a :Ag<CR>
 
-let g:coc_global_extensions = ['coc-ultisnips', 'coc-go', 'coc-tsserver', 'coc-json', 'coc-snippets']
+let g:coc_global_extensions = ['coc-ultisnips', 'coc-go', 'coc-tsserver', 'coc-json', 'coc-snippets', 'coc-css', 'coc-markdownlint', 'coc-styled-components', 'coc-rls']
 
 " " Run jest for current project
 " command! -nargs=0 Jest :call  CocAction('runCommand', 'jest.projectTest')
@@ -94,6 +95,7 @@ let g:coc_global_extensions = ['coc-ultisnips', 'coc-go', 'coc-tsserver', 'coc-j
 
 nmap <silent> <Leader>gd <Plug>(coc-definition)
 nmap <silent> <Leader>gr <Plug>(coc-rename)
+nmap <silent> <Leader>gu <Plug>(coc-references)
 nmap <leader>ac  <Plug>(coc-codeaction)
 nmap <leader>qf  <Plug>(coc-fix-current)
 
