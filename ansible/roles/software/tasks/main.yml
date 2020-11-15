@@ -7,3 +7,10 @@
   vars:
     packages:
       - flux
+      - avibrazil-rdm
+      - discord
+      - slack
+      - alfred
+      - firefox
+      - github
+      - 1password

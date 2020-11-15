@@ -9,3 +9,4 @@
      - vim
      - fzf
      - ag
+     - fd
