@@ -1,0 +1,9 @@
+---
+
+- name: Brew cask Software
+  homebrew_cask:
+    name: "{{ packages }}"
+    state: latest
+  vars:
+    packages:
+      - flux

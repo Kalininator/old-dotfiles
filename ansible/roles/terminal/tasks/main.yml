@@ -18,6 +18,7 @@
      - tmux
      - ranger
      - powerlevel9k
+     - node
 
 - name: Brew cask packages
   homebrew_cask:
@@ -26,6 +27,7 @@
   vars:
     packages:
      - font-hack-nerd-font
+     - alacritty
 
 - name: Check if ohmyzsh is installed
   stat:
@@ -37,3 +39,13 @@
   git:
     repo: https://github.com/robbyrussell/oh-my-zsh
     dest: ~/.oh-my-zsh
+
+- name: Node packages
+  npm:
+    name: neovim
+    global: yes
+
+- name: Python packages
+  pip:
+    name:
+      - neovim
