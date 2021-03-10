@@ -1,4 +1,5 @@
-export VISUAL=vim
+export VISUAL="nvim"
+# export VISUAL="code -w"
 export EDITOR=$VISUAL
 
 export TERM="xterm-256color"
@@ -49,3 +50,7 @@ export FZF_DEFAULT_COMMAND='fd --type f'
 
 # To apply the command to CTRL-T as well
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+export NVM_DIR="$HOME/.nvm"
+    [ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && . "$(brew --prefix)/opt/nvm/nvm.sh" # This loads nvm
+    [ -s "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" ] && . "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion

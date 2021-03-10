@@ -22,6 +22,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'w0rp/ale'
 Plug 'itchyny/lightline.vim'
 
+" Plug 'vimpostor/vim-tpipeline'
+
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
@@ -71,8 +73,8 @@ let g:ale_sign_warning = '⚠️'
 nmap <leader>d <Plug>(ale_fix)
 
 " FZF files
-nmap <Leader>f :GFiles<CR>
-nmap <Leader>F :Files<CR>
+nmap <Leader>F :GFiles<CR>
+nmap <Leader>f :Files<CR>
 " FZF Lines
 nmap <Leader>l :BLines<CR>
 nmap <Leader>L :Lines<CR>
