@@ -43,12 +43,14 @@ Plug 'morhetz/gruvbox'
 Plug 'kalininator/md-img-paste.vim'
 Plug 'kalininator/connectorcli.vim'
 
+
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 " Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
 " Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
 " Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
 
 Plug 'sheerun/vim-polyglot'
+Plug 'jxnblk/vim-mdx-js'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -200,4 +202,4 @@ set shortmess+=F
 " colorscheme molokai
 colorscheme gruvbox
 
-
+hi Normal guibg=NONE ctermbg=NONE

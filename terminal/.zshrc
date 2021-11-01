@@ -33,6 +33,8 @@ alias vim="nvim"
 alias r="ranger"
 alias wttr="curl wttr.in/London"
 alias ccli="connector-cli"
+alias cr="cargo run"
+
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 bindkey -v
@@ -54,3 +56,8 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export NVM_DIR="$HOME/.nvm"
     [ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && . "$(brew --prefix)/opt/nvm/nvm.sh" # This loads nvm
     [ -s "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" ] && . "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
+
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.0.0/bin:$PATH"
+export PATH="/Users/kal/.gem/ruby/3.0.0/bin:$PATH"
+
