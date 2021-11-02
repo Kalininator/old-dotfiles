@@ -11,7 +11,7 @@ export PATH=${HOME}/go/bin:$PATH
 # export GOROOT="$(brew --prefix golang)/libexec"
 # export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 
-source /usr/local/opt/powerlevel9k/powerlevel9k.zsh-theme
+source /opt/homebrew/opt/powerlevel9k/powerlevel9k.zsh-theme
 ZSH_THEME="powerlevel9k/powerlevel9k"
 POWERLEVEL9K_MODE='nerdfont-complete'
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
@@ -61,3 +61,4 @@ export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.0.0/bin:$PATH"
 export PATH="/Users/kal/.gem/ruby/3.0.0/bin:$PATH"
 
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
