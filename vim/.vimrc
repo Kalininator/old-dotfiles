@@ -68,6 +68,11 @@ let g:ale_fixers = {
   \    'go': ['gofmt'],
   \    'rust': ['rustfmt']
 \}
+let g:ale_rust_rls_config = {
+  \   'rust': {
+  \     'clippy_preference': 'on'
+  \   }
+  \}
 let g:ale_fix_on_save = 1
 let g:ale_javascript_prettier_use_local_config = 1
 let g:ale_sign_error = '❌'
@@ -83,7 +88,7 @@ nmap <Leader>L :Lines<CR>
 nmap ; :Buffers<CR>
 nmap <Leader>a :Ag<CR>
 
-let g:coc_global_extensions = ['coc-ultisnips', 'coc-go', 'coc-tsserver', 'coc-json', 'coc-snippets', 'coc-css', 'coc-markdownlint', 'coc-styled-components', 'coc-rls']
+let g:coc_global_extensions = ['coc-ultisnips', 'coc-go', 'coc-tsserver', 'coc-json', 'coc-snippets', 'coc-css', 'coc-markdownlint', 'coc-styled-components', 'coc-rls', 'coc-rust-analyzer']
 
 " " Run jest for current project
 " command! -nargs=0 Jest :call  CocAction('runCommand', 'jest.projectTest')
