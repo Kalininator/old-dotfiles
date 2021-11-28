@@ -12,3 +12,7 @@ cd ~/.dotfiles
 stow terminal
 stow vim
 ```
+
+```
+npm i -g typescript typescript-language-server vscode-langservers-extracted diagnostic-languageserver
+```

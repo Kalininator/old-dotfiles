@@ -15,12 +15,13 @@ vim.cmd([[colorscheme gruvbox]])
 
 -- line numbers
 wo.number = true
+wo.relativenumber = true
 o.scrolloff = 8
 
 -- display
 o.completeopt = 'menu,menuone,noselect'
-wo.wrap = false
-wo.signcolumn = 'yes'
+wo.wrap = true
+wo.signcolumn = 'no'
 vim.cmd('highlight clear SignColumn')
 vim.cmd('highlight clear Folded')
 vim.cmd('highlight VertSplit cterm=NONE gui=NONE')
