@@ -22,6 +22,12 @@ local binds = {
     {'n', '<leader>gr', '<cmd>lua vim.lsp.buf.rename()<CR>'}, -- rename symbol
     -- {'n', '<leader>sj', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>'}, -- go to next diagnostic
     -- {'n', '<leader>sk', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>'}, -- go to previous diagnostic
+    {'n', '<C-n>', ':NvimTreeToggle<CR>'},
+    -- Tux navigation
+    {'n', '<C-h>', '<cmd>lua require"nvim-tmux-navigation".NvimTmuxNavigateLeft()<CR>'},
+    {'n', '<C-j>', '<cmd>lua require"nvim-tmux-navigation".NvimTmuxNavigateDown()<CR>'},
+    {'n', '<C-k>', '<cmd>lua require"nvim-tmux-navigation".NvimTmuxNavigateUp()<CR>'},
+    {'n', '<C-l>', '<cmd>lua require"nvim-tmux-navigation".NvimTmuxNavigateRight()<CR>'},
 }
 
 vim.g.mapleader = " "
