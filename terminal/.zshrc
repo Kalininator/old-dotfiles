@@ -37,6 +37,7 @@ alias r="ranger"
 alias wttr="curl wttr.in/London"
 alias br="/Users/kal/Documents/GitHub/connector-cli/bin/run"
 alias python="python3"
+alias cr="cargo run"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 bindkey -v
@@ -65,3 +66,4 @@ export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.0.0/bin:$PATH"
 export PATH="/Users/kal/.gem/ruby/3.0.0/bin:$PATH"
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

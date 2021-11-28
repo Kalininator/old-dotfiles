@@ -22,8 +22,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'w0rp/ale'
 Plug 'itchyny/lightline.vim'
 
-" Plug 'vimpostor/vim-tpipeline'
-
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
@@ -39,16 +37,10 @@ Plug 'jiangmiao/auto-pairs'
 
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'morhetz/gruvbox'
-
-Plug 'kalininator/md-img-paste.vim'
-Plug 'kalininator/connectorcli.vim'
-
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
-" Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
-" Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
-" Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
 
 Plug 'sheerun/vim-polyglot'
+Plug 'jxnblk/vim-mdx-js'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -66,6 +58,11 @@ let g:ale_fixers = {
   \    'go': ['gofmt'],
   \    'rust': ['rustfmt']
 \}
+let g:ale_rust_rls_config = {
+  \   'rust': {
+  \     'clippy_preference': 'on'
+  \   }
+  \}
 let g:ale_fix_on_save = 1
 let g:ale_javascript_prettier_use_local_config = 1
 let g:ale_sign_error = '❌'
@@ -81,7 +78,7 @@ nmap <Leader>L :Lines<CR>
 nmap ; :Buffers<CR>
 nmap <Leader>a :Ag<CR>
 
-let g:coc_global_extensions = ['coc-ultisnips', 'coc-go', 'coc-tsserver', 'coc-json', 'coc-snippets', 'coc-css', 'coc-markdownlint', 'coc-styled-components', 'coc-rls']
+let g:coc_global_extensions = ['coc-ultisnips', 'coc-go', 'coc-tsserver', 'coc-json', 'coc-snippets', 'coc-css', 'coc-markdownlint', 'coc-styled-components', 'coc-rls', 'coc-rust-analyzer']
 
 " " Run jest for current project
 " command! -nargs=0 Jest :call  CocAction('runCommand', 'jest.projectTest')
@@ -200,4 +197,4 @@ set shortmess+=F
 " colorscheme molokai
 colorscheme gruvbox
 
-
+hi Normal guibg=NONE ctermbg=NONE
