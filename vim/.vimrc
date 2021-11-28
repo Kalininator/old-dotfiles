@@ -22,8 +22,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'w0rp/ale'
 Plug 'itchyny/lightline.vim'
 
-" Plug 'vimpostor/vim-tpipeline'
-
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
@@ -39,15 +37,7 @@ Plug 'jiangmiao/auto-pairs'
 
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'morhetz/gruvbox'
-
-Plug 'kalininator/md-img-paste.vim'
-Plug 'kalininator/connectorcli.vim'
-
-
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
-" Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
-" Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
-" Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
 
 Plug 'sheerun/vim-polyglot'
 Plug 'jxnblk/vim-mdx-js'
