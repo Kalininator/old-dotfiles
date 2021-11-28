@@ -5,8 +5,8 @@ require('formatter').setup({
         -- prettier
        function()
           return {
-            exe = "prettier",
-            args = {"--stdin-filepath", vim.api.nvim_buf_get_name(0), '--single-quote'},
+            exe = "npx eslint",
+            args = {"--stdin-filename", vim.api.nvim_buf_get_name(0), '--fix'},
             stdin = true
           }
         end
@@ -15,11 +15,21 @@ require('formatter').setup({
         -- prettier
        function()
           return {
-            exe = "prettier",
-            args = {"--stdin-filepath", vim.api.nvim_buf_get_name(0), '--single-quote'},
+            exe = "eslint_d",
+            args = {"--fix-to-stdout", "--stdin", "--stdin-filename", vim.api.nvim_buf_get_name(0), '--fix'},
             stdin = true
           }
         end
+    },
+    rust = {
+      -- Rustfmt
+      function()
+        return {
+          exe = "rustfmt",
+          args = {"--emit=stdout"},
+          stdin = true
+        }
+      end
     },
     -- lua = {
     --     -- luafmt

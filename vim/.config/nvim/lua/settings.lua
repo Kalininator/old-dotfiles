@@ -71,6 +71,17 @@ vim.cmd('highlight LspDiagnosticsUnderlineWarning ctermfg=none guifg=none cterm=
 vim.cmd('highlight LspDiagnosticsUnderlineInformation ctermfg=none guifg=none cterm=underline gui=underline')
 vim.cmd('highlight LspDiagnosticsUnderlineHint ctermfg=none guifg=none cterm=underline gui=underline')
 
+vim.cmd('autocmd BufWritePre *.rs lua vim.lsp.buf.formatting_sync(nil, 200)')
+-- vim.cmd('autocmd BufWritePre *.ts lua vim.lsp.buf.formatting_sync(nil, 200)')
+
+vim.api.nvim_exec([[
+augroup FormatAutogroup
+  autocmd!
+  autocmd BufWritePost *.js,*.ts,*.rs,*.lua FormatWrite
+augroup END
+]], true)
+
+
 
 
 -- UNCOMMENT FOR DEBUG MESSAGES
