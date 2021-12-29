@@ -64,6 +64,13 @@ lspconfig.rust_analyzer.setup({
     on_attach=on_attach,
     settings = {
         ["rust-analyzer"] = {
+	    diagnostics = {
+		disabled = {
+		    "unresolved-proc-macro"
+		},
+		enableExperimental = true,
+		enable = true,
+	    },
             assist = {
                 importGranularity = "module",
                 importPrefix = "by_self",

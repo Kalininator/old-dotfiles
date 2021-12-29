@@ -18,6 +18,7 @@ local binds = {
     -- {'n', '<Leader>si', '<cmd>lua require("telescope.builtin").lsp_implementations()<CR>'}, -- go to implementation
     {'n', '<Leader>gu', '<cmd>lua require("telescope.builtin").lsp_references()<CR>'}, -- show references
     {'n', '<leader>ac', '<cmd>lua require("telescope.builtin").lsp_code_actions()<CR>'}, -- show code actions
+    -- {'n', 'K', '<cmd>lua vim.diagnostic.open_float()<CR>'}, -- cursor hover
     {'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>'}, -- cursor hover
     {'n', '<leader>gr', '<cmd>lua vim.lsp.buf.rename()<CR>'}, -- rename symbol
     -- {'n', '<leader>sj', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>'}, -- go to next diagnostic
