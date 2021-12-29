@@ -81,7 +81,10 @@ augroup FormatAutogroup
   autocmd BufWritePost *.js,*.ts,*.rs,*.lua FormatWrite
 augroup END
 ]], true)
+vim.cmd('hi Normal guibg=NONE ctermbg=NONE')
 
+
+vim.cmd('set noswapfile')
 
 
 
