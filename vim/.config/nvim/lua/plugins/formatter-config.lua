@@ -10,6 +10,15 @@ require('formatter').setup({
           }
         end
     },
+    typescriptreact = {
+       function()
+          return {
+            exe = "eslint_d",
+            args = {"--fix-to-stdout", "--stdin", "--stdin-filename", vim.api.nvim_buf_get_name(0), '--fix'},
+            stdin = true
+          }
+        end
+    },
     typescript = {
        function()
           return {
