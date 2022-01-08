@@ -19,19 +19,21 @@ wo.relativenumber = true
 o.scrolloff = 8
 
 -- display
-o.completeopt = 'menu,menuone,noselect'
+o.completeopt = "menu,menuone,noselect"
 wo.wrap = true
-wo.signcolumn = 'no'
-vim.cmd('highlight clear SignColumn')
-vim.cmd('highlight clear Folded')
-vim.cmd('highlight VertSplit cterm=NONE gui=NONE')
-vim.cmd('highlight Pmenu ctermbg=Black guibg=Black ctermfg=Grey guifg=Grey')
-vim.cmd('highlight PmenuSel ctermbg=Grey guibg=Grey ctermfg=Black guifg=Black')
-vim.cmd('highlight PmenuSbar ctermbg=Black guibg=Black')
-vim.cmd('highlight PmenuThumb ctermbg=Grey guibg=Grey')
-vim.cmd('highlight LspDiagnosticsFloating ctermbg=Black guibg=Black')
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
-  vim.lsp.handlers.hover, {
+wo.signcolumn = "no"
+vim.cmd("highlight clear SignColumn")
+vim.cmd("highlight clear Folded")
+vim.cmd("highlight VertSplit cterm=NONE gui=NONE")
+vim.cmd("highlight Pmenu ctermbg=Black guibg=Black ctermfg=Grey guifg=Grey")
+vim.cmd("highlight PmenuSel ctermbg=Grey guibg=Grey ctermfg=Black guifg=Black")
+vim.cmd("highlight PmenuSbar ctermbg=Black guibg=Black")
+vim.cmd("highlight PmenuThumb ctermbg=Grey guibg=Grey")
+vim.cmd("highlight LspDiagnosticsFloating ctermbg=Black guibg=Black")
+vim.lsp.handlers["textDocument/hover"] =
+  vim.lsp.with(
+  vim.lsp.handlers.hover,
+  {
     border = "rounded"
   }
 )
@@ -46,8 +48,8 @@ o.showmatch = true
 wo.cursorline = true
 wo.list = true
 -- vim.cmd('set listchars=tab:‹·›,trail:·,lead:·,precedes:«,extends:»')
-vim.cmd('highlight SpecialKey ctermfg=DarkGrey guifg=DarkGrey')
-vim.cmd('highlight NonText ctermfg=DarkGrey guifg=DarkGrey')
+vim.cmd("highlight SpecialKey ctermfg=DarkGrey guifg=DarkGrey")
+vim.cmd("highlight NonText ctermfg=DarkGrey guifg=DarkGrey")
 
 -- split behaviour
 o.splitbelow = true
@@ -63,30 +65,33 @@ o.shiftwidth = 2
 -- o.foldlevel = 2
 
 -- lsp
-vim.cmd('highlight LspDiagnosticsVirtualTextError ctermfg=Red guifg=Red')
-vim.cmd('highlight LspDiagnosticsVirtualTextWarning ctermfg=Yellow guifg=Yellow')
-vim.cmd('highlight LspDiagnosticsVirtualTextHint ctermfg=Blue guifg=Blue')
-vim.cmd('highlight LspDiagnosticsVirtualTextInformation ctermfg=DarkGrey guifg=DarkGrey')
-vim.cmd('highlight LspDiagnosticsUnderlineError ctermfg=none guifg=none cterm=underline gui=underline')
-vim.cmd('highlight LspDiagnosticsUnderlineWarning ctermfg=none guifg=none cterm=underline gui=underline')
-vim.cmd('highlight LspDiagnosticsUnderlineInformation ctermfg=none guifg=none cterm=underline gui=underline')
-vim.cmd('highlight LspDiagnosticsUnderlineHint ctermfg=none guifg=none cterm=underline gui=underline')
+vim.cmd("highlight LspDiagnosticsVirtualTextError ctermfg=Red guifg=Red")
+vim.cmd("highlight LspDiagnosticsVirtualTextWarning ctermfg=Yellow guifg=Yellow")
+vim.cmd("highlight LspDiagnosticsVirtualTextHint ctermfg=Blue guifg=Blue")
+vim.cmd("highlight LspDiagnosticsVirtualTextInformation ctermfg=DarkGrey guifg=DarkGrey")
+vim.cmd("highlight LspDiagnosticsUnderlineError ctermfg=none guifg=none cterm=underline gui=underline")
+vim.cmd("highlight LspDiagnosticsUnderlineWarning ctermfg=none guifg=none cterm=underline gui=underline")
+vim.cmd("highlight LspDiagnosticsUnderlineInformation ctermfg=none guifg=none cterm=underline gui=underline")
+vim.cmd("highlight LspDiagnosticsUnderlineHint ctermfg=none guifg=none cterm=underline gui=underline")
 
-vim.cmd('autocmd BufWritePre *.rs lua vim.lsp.buf.formatting_sync(nil, 200)')
+-- vim.cmd([[au CursorHold * lua vim.diagnostic.open_float(0,{scope = "cursor"})]])
+-- vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, { virtual_text = false, } )
+
+vim.cmd("autocmd BufWritePre *.rs lua vim.lsp.buf.formatting_sync(nil, 200)")
 -- vim.cmd('autocmd BufWritePre *.ts lua vim.lsp.buf.formatting_sync(nil, 200)')
 
-vim.api.nvim_exec([[
+vim.api.nvim_exec(
+  [[
 augroup FormatAutogroup
   autocmd!
   autocmd BufWritePost *.js,*.ts,*.rs,*.lua FormatWrite
 augroup END
-]], true)
-vim.cmd('hi Normal guibg=NONE ctermbg=NONE')
+]],
+  true
+)
+vim.cmd("hi Normal guibg=NONE ctermbg=NONE")
 
-
-vim.cmd('set noswapfile')
-
-
+vim.cmd("set noswapfile")
 
 -- UNCOMMENT FOR DEBUG MESSAGES
 -- print('- options.lua...OK!')
