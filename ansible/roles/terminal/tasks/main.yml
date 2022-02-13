@@ -27,7 +27,6 @@
   vars:
     packages:
      - font-hack-nerd-font
-     - alacritty
 
 - name: Check if ohmyzsh is installed
   stat:
@@ -42,8 +41,14 @@
 
 - name: Node packages
   npm:
-    name: neovim
+    name: "{{ packages }}"
     global: yes
+  vars:
+    packages:
+      - neovim
+      - typescript
+      - typescript-language-server
+      - vscode-langservers-extracted
 
 - name: Python packages
   pip:

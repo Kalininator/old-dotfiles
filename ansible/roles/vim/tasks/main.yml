@@ -6,7 +6,6 @@
   vars:
     packages:
      - nvim
-     - vim
      - fzf
      - ag
      - fd
