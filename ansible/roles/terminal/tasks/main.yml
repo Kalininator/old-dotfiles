@@ -41,14 +41,14 @@
 
 - name: Node packages
   npm:
-    name: "{{ packages }}"
+    name: "{{ item }}"
     global: yes
-  vars:
-    packages:
-      - neovim
-      - typescript
-      - typescript-language-server
-      - vscode-langservers-extracted
+    state: present
+  loop:
+    - neovim
+    - typescript
+    - typescript-language-server
+    - vscode-langservers-extracted
 
 - name: Python packages
   pip:
