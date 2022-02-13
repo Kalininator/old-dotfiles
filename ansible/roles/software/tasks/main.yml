@@ -7,7 +7,6 @@
   vars:
     packages:
       - flux
-      - slack
       - alfred
       - github
       - postman
