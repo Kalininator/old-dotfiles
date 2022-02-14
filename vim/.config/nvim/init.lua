@@ -6,3 +6,5 @@ require("plugins/treesitter-config")
 require("plugins/telescope-config")
 require("plugins/nvim-cmp-config")
 require("plugins/formatter-config")
+
+require'nvim-tree'.setup {}
