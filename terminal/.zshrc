@@ -61,9 +61,12 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 eval 
 CONNECTOR_CLI_AC_ZSH_SETUP_PATH=/Users/kal/Library/Caches/@trayio/connector-cli/autocomplete/zsh_setup && test -f $CONNECTOR_CLI_AC_ZSH_SETUP_PATH && source $CONNECTOR_CLI_AC_ZSH_SETUP_PATH; # connector-cli autocomplete setup
-export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
-export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.0.0/bin:$PATH"
-export PATH="/Users/kal/.gem/ruby/3.0.0/bin:$PATH"
+# export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+# export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.0.0/bin:$PATH"
+# export PATH="/Users/kal/.gem/ruby/3.0.0/bin:$PATH"
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export PATH="$HOME/.rbenv/bin:$PATH"
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+source $HOME/.zshenv
