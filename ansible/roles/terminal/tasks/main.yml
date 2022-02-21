@@ -49,6 +49,7 @@
     - typescript
     - typescript-language-server
     - vscode-langservers-extracted
+    - diagnostic-languageserver
 
 - name: Python packages
   pip:
