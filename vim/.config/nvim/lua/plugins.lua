@@ -13,12 +13,8 @@ return require("packer").startup(
     use {"nvim-lua/lsp_extensions.nvim"}
     use {"nvim-lua/completion-nvim"}
     use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
-    use {
-      "terrortylor/nvim-comment",
-      config = function()
-        require("nvim_comment").setup()
-      end
-    }
+    use { "terrortylor/nvim-comment" }
+    require('nvim_comment').setup()
 
     -- telescope
     use "nvim-telescope/telescope.nvim"
@@ -54,6 +50,8 @@ return require("packer").startup(
     use "mhartington/formatter.nvim"
 
     use "tpope/vim-fugitive"
+    use "tpope/vim-surround"
+    use "tpope/vim-repeat"
     use {"ellisonleao/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
 
     use {
