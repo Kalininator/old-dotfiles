@@ -38,6 +38,9 @@ alias wttr="curl wttr.in/London"
 alias br="/Users/kal/Documents/GitHub/connector-cli/bin/run"
 alias python="python3"
 alias cr="cargo run"
+alias k="kubectl"
+alias ap="ansible-playbook"
+alias $=""
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 bindkey -v
