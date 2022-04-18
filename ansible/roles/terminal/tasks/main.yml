@@ -50,6 +50,7 @@
     - typescript-language-server
     - vscode-langservers-extracted
     - diagnostic-languageserver
+    - eslint_d
 
 - name: Python packages
   pip:

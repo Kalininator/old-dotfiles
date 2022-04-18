@@ -51,7 +51,8 @@ lspconfig.diagnosticls.setup {
     },
     filetypes = {
       javascript = "eslint",
-      typescript = "eslint"
+      typescript = "eslint",
+      typescriptreact = "eslint"
     }
   }
 }
