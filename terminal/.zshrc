@@ -39,6 +39,7 @@ alias br="/Users/kal/Documents/GitHub/connector-cli/bin/run"
 alias python="python3"
 alias cr="cargo run"
 alias k="kubectl"
+alias kaf="kubectl apply -f "
 alias ap="ansible-playbook"
 alias $=""
 
