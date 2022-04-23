@@ -8,7 +8,7 @@ lspconfig.html.setup {}
 lspconfig.cssls.setup {}
 lspconfig.jsonls.setup {}
 lspconfig.solargraph.setup {}
-lspconfig.ansiblels.setup {}
+-- lspconfig.ansiblels.setup {}
 
 -- language: JavaScript/TypeScript
 -- requirements: 'npm', 'typescript', 'typescript-language-server'
