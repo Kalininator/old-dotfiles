@@ -16,7 +16,7 @@ lspconfig.solargraph.setup {}
 lspconfig.tsserver.setup {}
 
 lspconfig.diagnosticls.setup {
-  filetypes = {"javascript", "typescript"},
+  filetypes = {"javascript", "typescript", "javascriptreact", "typescriptreact"},
   root_dir = function(fname)
     return util.root_pattern("tsconfig.json")(fname) or util.root_pattern(".eslintrc.js")(fname)
   end,
@@ -51,6 +51,7 @@ lspconfig.diagnosticls.setup {
     },
     filetypes = {
       javascript = "eslint",
+      javascriptreact = "eslint",
       typescript = "eslint",
       typescriptreact = "eslint"
     }
