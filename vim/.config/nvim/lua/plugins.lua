@@ -50,6 +50,7 @@ return require("packer").startup(
     use "mhartington/formatter.nvim"
 
     use "tpope/vim-fugitive"
+    use "tpope/vim-rhubarb"
     use "tpope/vim-surround"
     use "tpope/vim-repeat"
     use {"ellisonleao/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}

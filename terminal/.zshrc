@@ -72,3 +72,4 @@ ulimit -Sn 10240
 
 # heroku autocomplete setup
 HEROKU_AC_ZSH_SETUP_PATH=/Users/kal/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
+export GPG_TTY=/dev/ttys003
