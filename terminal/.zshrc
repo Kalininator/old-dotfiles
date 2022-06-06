@@ -41,7 +41,7 @@ alias cr="cargo run"
 alias k="kubectl"
 alias kaf="kubectl apply -f "
 alias ap="ansible-playbook"
-alias $=""
+alias flushdns="sudo killall -HUP mDNSResponder"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 bindkey -v
