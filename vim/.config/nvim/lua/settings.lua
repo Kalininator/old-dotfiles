@@ -89,6 +89,16 @@ augroup END
 ]],
   true
 )
+vim.api.nvim_exec(
+  [[
+    augroup FormatAutogroup
+      autocmd!
+      autocmd BufWritePost *.hcl,*.tf FormatWrite
+      autocmd BufNewFile,BufRead *.hcl set filetype=terraform syntax=terraform
+    augroup END
+  ]],
+  true
+)
 vim.cmd("hi Normal guibg=NONE ctermbg=NONE")
 
 vim.cmd("set noswapfile")

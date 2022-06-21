@@ -67,7 +67,16 @@ require("formatter").setup(
            stdin = true,
          }
        end
-     }
+     },
+     terraform = {
+      function()
+        return {
+          exec = "terragrunt",
+          args = {"hclfmt"},
+          stdin = false
+        }
+      end
+    }
     }
   }
 )
