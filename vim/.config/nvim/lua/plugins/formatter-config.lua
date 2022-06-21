@@ -5,17 +5,8 @@ require("formatter").setup(
       javascript = {
         function()
           return {
-            exe = "prettier",
-            args = {"--stdin-filepath", vim.api.nvim_buf_get_name(0), "--single-quote"},
-            stdin = true
-          }
-        end
-      },
-      javascriptreact = {
-        function()
-          return {
-            exe = "prettier",
-            args = {"--stdin-filepath", vim.api.nvim_buf_get_name(0), "--single-quote"},
+            exe = "eslint_d",
+            args = {"--fix-to-stdout", "--stdin", "--stdin-filename", vim.api.nvim_buf_get_name(0), "--fix"},
             stdin = true
           }
         end
@@ -23,8 +14,8 @@ require("formatter").setup(
       typescriptreact = {
         function()
           return {
-            exe = "prettier",
-            args = {"--stdin-filepath", vim.api.nvim_buf_get_name(0), "--single-quote"},
+            exe = "eslint_d",
+            args = {"--fix-to-stdout", "--stdin", "--stdin-filename", vim.api.nvim_buf_get_name(0), "--fix"},
             stdin = true
           }
         end
@@ -32,8 +23,8 @@ require("formatter").setup(
       typescript = {
         function()
           return {
-            exe = "prettier",
-            args = {"--stdin-filepath", vim.api.nvim_buf_get_name(0), "--single-quote"},
+            exe = "eslint_d",
+            args = {"--fix-to-stdout", "--stdin", "--stdin-filename", vim.api.nvim_buf_get_name(0), "--fix"},
             stdin = true
           }
         end
