@@ -20,7 +20,7 @@ local binds = {
   {"n", "<Leader>gs", '<cmd>lua require("telescope.builtin").git_status()<CR>'}, -- show references
   {"n", "<Leader>gb", '<cmd>lua require("telescope.builtin").git_branches()<CR>'}, -- show references
   {"n", "<Leader>gt", '<cmd>lua require("telescope.builtin").treesitter()<CR>'}, -- show references
-  {"n", "<leader>ac", '<cmd>lua require("telescope.builtin").lsp_code_actions()<CR>'}, -- show code actions
+  {"n", "<leader>ac", '<cmd>lua vim.lsp.buf.code_action()<CR>'}, -- show code actions
   -- {'n', 'K', '<cmd>lua vim.diagnostic.open_float()<CR>'}, -- cursor hover
   {"n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>"}, -- cursor hover
   {"n", "<leader>gr", "<cmd>lua vim.lsp.buf.rename()<CR>"}, -- rename symbol
