@@ -16,6 +16,10 @@ local binds = {
   -- {'n', '<Leader>st', '<cmd>lua require("telescope.builtin").lsp_type_definitions()<CR>'}, -- go to type definition
   -- {'n', '<Leader>si', '<cmd>lua require("telescope.builtin").lsp_implementations()<CR>'}, -- go to implementation
   {"n", "<Leader>gu", '<cmd>lua require("telescope.builtin").lsp_references()<CR>'}, -- show references
+  {"n", "<Leader>gc", '<cmd>lua require("telescope.builtin").git_commits()<CR>'}, -- show references
+  {"n", "<Leader>gs", '<cmd>lua require("telescope.builtin").git_status()<CR>'}, -- show references
+  {"n", "<Leader>gb", '<cmd>lua require("telescope.builtin").git_branches()<CR>'}, -- show references
+  {"n", "<Leader>gt", '<cmd>lua require("telescope.builtin").treesitter()<CR>'}, -- show references
   {"n", "<leader>ac", '<cmd>lua require("telescope.builtin").lsp_code_actions()<CR>'}, -- show code actions
   -- {'n', 'K', '<cmd>lua vim.diagnostic.open_float()<CR>'}, -- cursor hover
   {"n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>"}, -- cursor hover
