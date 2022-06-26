@@ -2,14 +2,14 @@ require("telescope").setup(
   {
     pickers = {
       find_files = {
-        disable_devicons = true
+        disable_devicons = false
       },
       git_files = {
-        disable_devicons = true
+        disable_devicons = false
       },
       file_browser = {
-        disable_devicons = true,
-        hidden = true
+        disable_devicons = false,
+        hidden = false
       }
     }
   }
