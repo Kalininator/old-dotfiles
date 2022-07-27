@@ -103,5 +103,8 @@ vim.cmd("hi Normal guibg=NONE ctermbg=NONE")
 
 vim.cmd("set noswapfile")
 
+vim.o.updatetime = 250
+vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
+
 -- UNCOMMENT FOR DEBUG MESSAGES
 -- print('- options.lua...OK!')
