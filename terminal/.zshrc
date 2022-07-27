@@ -42,6 +42,7 @@ alias k="kubectl"
 alias kaf="kubectl apply -f "
 alias ap="ansible-playbook"
 alias flushdns="sudo killall -HUP mDNSResponder"
+alias fs="foreman start -f Procfile.dev"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 bindkey -v
