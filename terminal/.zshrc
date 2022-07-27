@@ -32,10 +32,8 @@ alias tkill="tmux kill-session -t"
 alias tls="tmux ls"
 alias v="nvim"
 alias vim="nvim"
-alias ccli="connector-cli"
 alias r="ranger"
 alias wttr="curl wttr.in/London"
-alias br="/Users/kal/Documents/GitHub/connector-cli/bin/run"
 alias python="python3"
 alias cr="cargo run"
 alias k="kubectl"
@@ -46,10 +44,6 @@ alias fs="foreman start -f Procfile.dev"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 bindkey -v
-
-function cdcon() {
-	cd ~/Documents/Github/connectors/$1
-}
 
 function cdgit() {
 	cd ~/Documents/Github/$1
