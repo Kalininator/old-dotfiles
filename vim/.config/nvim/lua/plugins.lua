@@ -53,7 +53,8 @@ return require("packer").startup(
     use "tpope/vim-rhubarb"
     use "tpope/vim-surround"
     use "tpope/vim-repeat"
-    use {"ellisonleao/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
+    use { "ellisonleao/gruvbox.nvim" }
+    use "EdenEast/nightfox.nvim"
 
     use {
       "kyazdani42/nvim-tree.lua",
@@ -73,6 +74,12 @@ return require("packer").startup(
         }
       end
     }
+
+    -- use {
+    --   "dgrbrady/nvim-docker",
+    --   requires = {"nvim-lua/plenary.nvim", "MunifTanjim/nui.nvim"},
+    --   rocks = "4O4/reactivex" -- ReactiveX Lua implementation
+    -- }
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins

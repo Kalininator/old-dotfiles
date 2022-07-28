@@ -32,6 +32,7 @@ local binds = {
   {"n", "<C-j>", '<cmd>lua require"nvim-tmux-navigation".NvimTmuxNavigateDown()<CR>'},
   {"n", "<C-k>", '<cmd>lua require"nvim-tmux-navigation".NvimTmuxNavigateUp()<CR>'},
   {"n", "<C-l>", '<cmd>lua require"nvim-tmux-navigation".NvimTmuxNavigateRight()<CR>'},
+  -- {"n", "<leader>C", '<cmd>lua require"nvim-docker".containers.list_containers()<CR>'},
   {"n", "<leader>d", "<cmd>Format<CR>"}
 }
 

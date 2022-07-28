@@ -9,9 +9,18 @@ o.errorbells = false
 bo.swapfile = false
 o.backup = false
 
+require('nightfox').setup({
+  options = {
+    -- Compiled file's destination location
+    transparent = true,    -- Disable setting background
+    terminal_colors = true, -- Set terminal colors (vim.g.terminal_color_*) used in `:terminal`
+    dim_inactive = false   -- Non focused panes set to alternative background
+  }
+})
+
 vim.o.termguicolors = true
 vim.o.background = "dark" -- or "light" for light mode
-vim.cmd([[colorscheme gruvbox]])
+vim.cmd([[colorscheme duskfox]])
 
 -- line numbers
 wo.number = true
