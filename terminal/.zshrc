@@ -41,6 +41,8 @@ alias kaf="kubectl apply -f "
 alias ap="ansible-playbook"
 alias flushdns="sudo killall -HUP mDNSResponder"
 alias fs="foreman start -f Procfile.dev"
+alias dbprod="~/cloud_sql_proxy -instances=laced-production:europe-west1:laced-master-instance=tcp:5433"
+alias dbstaging="~/cloud_sql_proxy -instances=laced-staging:europe-west1:laced-master-instance=tcp:5433"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 bindkey -v
