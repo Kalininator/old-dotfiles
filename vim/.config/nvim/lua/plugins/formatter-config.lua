@@ -71,8 +71,8 @@ require("formatter").setup(
      hcl = {
       function()
         return {
-          exec = "terragrunt",
-          args = {"hclfmt"},
+          exec = "terraform",
+          args = {"fmt"},
           stdin = false
         }
       end
