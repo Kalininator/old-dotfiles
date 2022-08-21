@@ -16,6 +16,8 @@ return require("packer").startup(
     use { "terrortylor/nvim-comment" }
     require('nvim_comment').setup()
 
+    use "findango/vim-mdx"
+
     -- telescope
     use "nvim-telescope/telescope.nvim"
     use "nvim-lua/popup.nvim"
