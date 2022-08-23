@@ -46,8 +46,6 @@ return require("packer").startup(
     use "hrsh7th/vim-vsnip-integ"
     use "rafamadriz/friendly-snippets"
 
-    use "github/copilot.vim"
-
     use {"simrat39/rust-tools.nvim"}
 
     -- linting
