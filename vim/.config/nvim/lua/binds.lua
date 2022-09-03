@@ -1,8 +1,8 @@
 local binds = {
   {"i", "kj", "<Esc>"},
   -- FILES = `f`
-  -- {'n', '<leader>ff', '<cmd>lua require("telescope.builtin").find_files()<CR>'}, -- open file finder
-  {"n", "<leader>f", '<cmd>lua require("telescope.builtin").git_files()<CR>'}, -- open git file finder
+  {'n', '<leader>f', '<cmd>lua require("telescope.builtin").find_files()<CR>'}, -- open file finder
+  -- {"n", "<leader>f", '<cmd>lua require("telescope.builtin").git_files()<CR>'}, -- open git file finder
   -- {'n', '<leader>fb', '<cmd>lua require("telescope.builtin").file_browser()<CR>'}, -- open file browser on current working directory
   -- {'n', '<leader>fd', '<cmd>lua require("telescope.builtin").file_browser({ cwd = require("telescope.utils").buffer_dir() })<CR>'}, -- open file browser on buffer directory
   -- {'n', '<Leader>a', '<cmd>lua require("plugins.telescope-config").live_grep()<CR>'}, -- open fuzzy find accross current working directory
