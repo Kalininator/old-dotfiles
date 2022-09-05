@@ -9,7 +9,7 @@ require("telescope").setup(
       },
       file_browser = {
         disable_devicons = false,
-        hidden = true
+        hidden = false
       }
     }
   }
