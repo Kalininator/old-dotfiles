@@ -68,11 +68,11 @@ require("formatter").setup(
          }
        end
      },
-     hcl = {
+     terraform = {
       function()
         return {
-          exec = "terraform",
-          args = {"fmt"},
+          exec = "terragrunt",
+          args = {"hclfmt"},
           stdin = false
         }
       end

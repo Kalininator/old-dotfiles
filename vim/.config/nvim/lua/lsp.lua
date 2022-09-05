@@ -14,6 +14,7 @@ lspconfig.solargraph.setup {}
 -- requirements: 'npm', 'typescript', 'typescript-language-server'
 -- command: npm install -g typescript typescript-language-server
 lspconfig.tsserver.setup {}
+lspconfig.terraformls.setup{}
 
 lspconfig.diagnosticls.setup {
   filetypes = {"javascript", "typescript", "javascriptreact", "typescriptreact"},
