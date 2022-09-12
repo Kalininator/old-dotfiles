@@ -34,8 +34,12 @@ local binds = {
   {"n", "<C-l>", '<cmd>lua require"nvim-tmux-navigation".NvimTmuxNavigateRight()<CR>'},
   -- {"n", "<leader>C", '<cmd>lua require"nvim-docker".containers.list_containers()<CR>'},
   {"n", "<leader>d", "<cmd>Format<CR>"},
-  {"x", "<leader>p", "\"_dP"}
+  {"x", "<leader>p", "\"_dP"},
+  {"n", "<leader>y", "\"+y"},
+  {"v", "<leader>y", "\"+y"},
 }
+
+-- map("n", "<leader>Y", "\"+Y")
 
 vim.g.mapleader = " "
 
