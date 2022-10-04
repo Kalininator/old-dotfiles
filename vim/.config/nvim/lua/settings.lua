@@ -53,6 +53,8 @@ o.smartcase = true
 o.hlsearch = false
 
 -- interface
+o.ls = 0
+o.ch = 0
 o.showmatch = true
 wo.cursorline = true
 wo.list = true
