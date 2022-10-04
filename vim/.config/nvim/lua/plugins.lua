@@ -26,7 +26,11 @@ return require("packer").startup(
     use {"nvim-telescope/telescope-fzf-native.nvim", run = "make"}
 
     -- interface
-    use "millermedeiros/vim-statline"
+    -- use "millermedeiros/vim-statline"
+    use {
+      "nvim-lualine/lualine.nvim",
+      requires = { "kyazdani42/nvim-web-devicons", opt = true }
+    }
 
     -- window management
     use {
