@@ -37,6 +37,7 @@ local binds = {
   {"x", "<leader>p", "\"_dP"},
   {"n", "<leader>y", "\"+y"},
   {"v", "<leader>y", "\"+y"},
+  {"n", "<leader>sv", "<cmd>:source $MYVIMRC<CR>"},
 }
 
 -- map("n", "<leader>Y", "\"+Y")
