@@ -24,6 +24,7 @@ return require("packer").startup(
     use "nvim-lua/popup.nvim"
     use "nvim-lua/plenary.nvim"
     use {"nvim-telescope/telescope-fzf-native.nvim", run = "make"}
+    use "kyazdani42/nvim-web-devicons" 
 
     -- interface
     -- use "millermedeiros/vim-statline"
