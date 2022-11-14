@@ -2,10 +2,12 @@ require("telescope").setup(
   {
     pickers = {
       find_files = {
-        disable_devicons = false
+        disable_devicons = false,
+	hidden = true
       },
       git_files = {
-        disable_devicons = false
+        disable_devicons = false,
+	hidden = true
       },
       file_browser = {
         disable_devicons = false,
@@ -27,6 +29,7 @@ local picker_configs = {}
 picker_configs.live_grep = function()
   local opts = {
     sorting_strategy = "ascending",
+    only_sort_text = false,
     layout_config = {
       prompt_position = "top"
     }
@@ -38,6 +41,7 @@ end
 -- current_buffer_fuzzy_find with tweaked layout
 picker_configs.current_buffer_fuzzy_find = function()
   local opts = {
+    only_sort_text = false,
     sorting_strategy = "ascending",
     layout_config = {
       prompt_position = "top"
