@@ -11,7 +11,6 @@ return require("packer").startup(
 
     use "neovim/nvim-lspconfig"
     use {"nvim-lua/lsp_extensions.nvim"}
-    use {"nvim-lua/completion-nvim"}
     use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
     use "nvim-treesitter/nvim-treesitter-context"
     use { "terrortylor/nvim-comment" }

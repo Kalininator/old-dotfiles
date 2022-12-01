@@ -59,9 +59,9 @@ lspconfig.diagnosticls.setup {
   }
 }
 
-local on_attach = function(client)
-  require "completion".on_attach(client)
-end
+-- local on_attach = function(client)
+--   require "completion".on_attach(client)
+-- end
 
 lspconfig.rust_analyzer.setup(
   {
