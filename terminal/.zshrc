@@ -49,6 +49,15 @@ alias tf="terraform"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 bindkey -v
 
+addToPathFront() {
+    if [[ "$PATH" != *"$1"* ]]; then
+        export PATH=$1:$PATH
+    fi
+}
+addToPathFront $HOME/.local/bin
+# alias tmux-sessionizer="~/.local/bin/tmux-sessionizer"
+bindkey -s ^f "tmux-sessionizer\n"
+
 function cdgit() {
 	cd ~/Documents/Github/$1
 }
