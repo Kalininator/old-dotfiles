@@ -20,7 +20,8 @@ require('nightfox').setup({
 
 vim.o.termguicolors = true
 vim.o.background = "dark" -- or "light" for light mode
-vim.cmd([[colorscheme duskfox]])
+-- vim.cmd([[colorscheme duskfox]])
+vim.cmd([[colorscheme gruvbox]])
 
 -- line numbers
 wo.number = true
