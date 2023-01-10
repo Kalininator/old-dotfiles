@@ -94,6 +94,15 @@ vim.cmd("autocmd BufWritePre *.rs lua vim.lsp.buf.formatting_sync(nil, 200)")
 
 vim.api.nvim_exec(
   [[
+augroup TfHcl
+  au!
+  autocmd BufNewFile,BufRead *.tf   set filetype=hcl
+augroup END
+]],
+  true
+)
+vim.api.nvim_exec(
+  [[
 augroup FormatAutogroup
   autocmd!
   autocmd BufWritePost *.js,*.ts,*.rs,*.lua FormatWrite
