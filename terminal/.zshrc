@@ -45,6 +45,8 @@ alias dbprod="~/cloud_sql_proxy -instances=laced-production:europe-west1:laced-m
 alias dbstaging="~/cloud_sql_proxy -instances=laced-staging:europe-west1:laced-master-instance=tcp:5433"
 alias cddot="cd ~/.dotfiles"
 alias tf="terraform"
+alias tfp="terraform plan"
+alias rspecf="rspec \$(fzf)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 bindkey -v
