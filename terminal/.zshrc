@@ -47,6 +47,7 @@ alias cddot="cd ~/.dotfiles"
 alias tf="terraform"
 alias tfp="terraform plan"
 alias rspecf="rspec \$(fzf)"
+alias git-ssh="git remote set-url origin git@github.com:\$(git remote get-url origin | sed 's/https:\/\/github.com\///' | sed 's/git@github.com://')"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 bindkey -v
