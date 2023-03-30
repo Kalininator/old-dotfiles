@@ -63,6 +63,10 @@ return require("packer").startup(
     use { "ellisonleao/gruvbox.nvim" }
     use "EdenEast/nightfox.nvim"
 
+    -- Ruby
+    use "tpope/vim-bundler"
+    use "tpope/vim-rails"
+
     use {
       "kyazdani42/nvim-tree.lua",
       requires = {
