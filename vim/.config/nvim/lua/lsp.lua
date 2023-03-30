@@ -1,5 +1,12 @@
 local lspconfig = require("lspconfig")
 local util = require("lspconfig").util
+local navic = require("nvim-navic")
+
+local on_attach = function(client, bufnr)
+    if client.server_capabilities.documentSymbolProvider then
+        navic.attach(client, bufnr)
+    end
+end
 
 -- languages: HTML/CSS/JSON
 -- requirements: 'npm', 'vscode-langservers-extracted'
@@ -7,17 +14,25 @@ local util = require("lspconfig").util
 lspconfig.html.setup {}
 lspconfig.cssls.setup {}
 lspconfig.jsonls.setup {}
-lspconfig.solargraph.setup {}
+lspconfig.solargraph.setup {
+  on_attach = on_attach
+}
 lspconfig.tailwindcss.setup {}
 -- lspconfig.ansiblels.setup {}
 
 -- language: JavaScript/TypeScript
 -- requirements: 'npm', 'typescript', 'typescript-language-server'
 -- command: npm install -g typescript typescript-language-server
-lspconfig.tsserver.setup {}
-lspconfig.terraformls.setup{}
+lspconfig.tsserver.setup {
+  on_attach = on_attach
+}
+lspconfig.terraformls.setup {
+  on_attach = on_attach,
+  filetypes = {"terraform", "hcl"}
+}
 
 lspconfig.diagnosticls.setup {
+  on_attach = on_attach,
   filetypes = {"javascript", "typescript", "javascriptreact", "typescriptreact"},
   root_dir = function(fname)
     return util.root_pattern("tsconfig.json")(fname) or util.root_pattern(".eslintrc.js")(fname)
@@ -60,36 +75,31 @@ lspconfig.diagnosticls.setup {
   }
 }
 
--- local on_attach = function(client)
---   require "completion".on_attach(client)
--- end
-
-lspconfig.rust_analyzer.setup(
-  {
-    on_attach = on_attach,
-    settings = {
-      ["rust-analyzer"] = {
-        diagnostics = {
-          disabled = {
-            "unresolved-proc-macro"
-          },
-          enableExperimental = true,
-          enable = true
-        },
-        assist = {
-          importGranularity = "module",
-          importPrefix = "by_self"
-        },
-        cargo = {
-          loadOutDirsFromCheck = true
-        },
-        procMacro = {
-          enable = true
-        },
-        checkOnSave = {
-          command = "clippy"
-        }
+lspconfig.rust_analyzer.setup  {
+  on_attach = on_attach,
+  settings = {
+    ["rust-analyzer"] = {
+      diagnostics = {
+	disabled = {
+	  "unresolved-proc-macro"
+	},
+	enableExperimental = true,
+	enable = true
+      },
+      assist = {
+	importGranularity = "module",
+	importPrefix = "by_self"
+      },
+      cargo = {
+	loadOutDirsFromCheck = true
+      },
+      procMacro = {
+	enable = true
+      },
+      checkOnSave = {
+	command = "clippy"
       }
     }
   }
-)
+}
+

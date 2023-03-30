@@ -82,6 +82,11 @@ return require("packer").startup(
       end
     }
 
+    use {
+      "SmiteshP/nvim-navic",
+      requires = "neovim/nvim-lspconfig"
+    }
+
     -- use {
     --   "dgrbrady/nvim-docker",
     --   requires = {"nvim-lua/plenary.nvim", "MunifTanjim/nui.nvim"},

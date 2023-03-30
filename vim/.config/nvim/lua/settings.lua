@@ -32,6 +32,8 @@ o.scrolloff = 8
 o.completeopt = "menu,menuone,noselect"
 wo.wrap = true
 wo.signcolumn = "no"
+-- vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
+
 vim.cmd("highlight clear SignColumn")
 vim.cmd("highlight clear Folded")
 vim.cmd("highlight VertSplit cterm=NONE gui=NONE")
@@ -115,7 +117,7 @@ vim.api.nvim_exec(
     augroup FormatAutogroup
       autocmd!
       autocmd BufNewFile,BufRead *.hcl set filetype=terraform syntax=terraform
-      autocmd BufWritePre *.hcl FormatWrite
+      autocmd BufWritePre *.hcl vim.lsp.buf.formatting_sync()
       autocmd BufWritePre *.tfvars lua vim.lsp.buf.formatting_sync()
       autocmd BufWritePre *.tf lua vim.lsp.buf.formatting_sync()
     augroup END
