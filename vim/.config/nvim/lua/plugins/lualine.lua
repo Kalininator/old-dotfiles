@@ -21,9 +21,9 @@ require('lualine').setup {
 	},
     },
     lualine_c = { 'diff', 'diagnostics'},
-    lualine_d = {{'filename', path = 1}},
+    lualine_d = {'filename'},
     lualine_x = {'filetype'},
-    -- lualine_y = {'progress'},
+    lualine_y = {'diagnostics'},
     lualine_z = {'location'}
   }
 }
