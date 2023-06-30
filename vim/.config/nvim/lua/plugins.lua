@@ -9,6 +9,8 @@ return require("packer").startup(
   function(use)
     use "wbthomason/packer.nvim"
 
+
+
     use "neovim/nvim-lspconfig"
     use {"nvim-lua/lsp_extensions.nvim"}
     use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
@@ -51,6 +53,29 @@ return require("packer").startup(
     use "hrsh7th/vim-vsnip-integ"
     use "rafamadriz/friendly-snippets"
 
+    use { "zbirenbaum/copilot.lua" }
+    require("copilot").setup({})
+
+	--     use {
+	--       "zbirenbaum/copilot.lua",
+	--       cmd = "Copilot",
+	--       event = "InsertEnter",
+	--       config = function()
+	-- require("copilot").setup({})
+	--       end,
+	--     }
+	--
+    use({
+      'zbirenbaum/copilot-cmp',
+      after = {
+	'copilot.lua',
+	'nvim-cmp',
+      },
+      config = function()
+	require('copilot_cmp').setup()
+      end,
+    })
+	
     use {"simrat39/rust-tools.nvim"}
 
     -- linting
@@ -89,6 +114,16 @@ return require("packer").startup(
     use {
       "SmiteshP/nvim-navic",
       requires = "neovim/nvim-lspconfig"
+    }
+
+    use {
+      "klen/nvim-test",
+      config = function()
+	require('nvim-test').setup()
+      end
+    }
+    require("nvim-test").setup{
+      silent = true
     }
 
     -- use {
