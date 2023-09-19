@@ -17,7 +17,9 @@ lspconfig.jsonls.setup {}
 lspconfig.solargraph.setup {
   on_attach = on_attach
 }
-lspconfig.tailwindcss.setup {}
+lspconfig.tailwindcss.setup {
+  filetypes = { "astro", "astro-markdown", "html", "javascript", "javascriptreact", "typescript", "typescriptreact" }
+}
 -- lspconfig.ansiblels.setup {}
 
 -- language: JavaScript/TypeScript
@@ -33,7 +35,7 @@ lspconfig.terraformls.setup {
 
 lspconfig.diagnosticls.setup {
   on_attach = on_attach,
-  filetypes = {"javascript", "typescript", "javascriptreact", "typescriptreact"},
+  filetypes = {"javascript", "typescript", "javascriptreact", "typescriptreact", "astro"},
   root_dir = function(fname)
     return util.root_pattern("tsconfig.json")(fname) or util.root_pattern(".eslintrc.js")(fname)
   end,
@@ -70,7 +72,8 @@ lspconfig.diagnosticls.setup {
       javascript = "eslint",
       javascriptreact = "eslint",
       typescript = "eslint",
-      typescriptreact = "eslint"
+      typescriptreact = "eslint",
+      astro = "eslint"
     }
   }
 }
@@ -102,4 +105,6 @@ lspconfig.rust_analyzer.setup  {
     }
   }
 }
+
+lspconfig.astro.setup{}
 
