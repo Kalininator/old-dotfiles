@@ -92,6 +92,7 @@ vim.cmd("highlight LspDiagnosticsUnderlineHint ctermfg=none guifg=none cterm=und
 -- vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, { virtual_text = false, } )
 
 vim.cmd("autocmd BufWritePre *.rs lua vim.lsp.buf.formatting_sync(nil, 200)")
+vim.cmd("autocmd BufRead,BufEnter *.astro set filetype=astro")
 -- vim.cmd('autocmd BufWritePre *.ts lua vim.lsp.buf.formatting_sync(nil, 200)')
 
 vim.api.nvim_exec(
