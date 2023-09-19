@@ -42,13 +42,22 @@ alias ap="ansible-playbook"
 alias flushdns="sudo killall -HUP mDNSResponder"
 alias fs="NODE_OPTIONS=--openssl-legacy-provider foreman start -f Procfile.dev"
 alias dbprod="~/cloud_sql_proxy -instances=laced-production:europe-west1:laced-master-instance=tcp:5433"
+alias dbprodread="~/cloud_sql_proxy -instances=laced-production:europe-west1:laced-analytics-replica=tcp:5434"
 alias dbstaging="~/cloud_sql_proxy -instances=laced-staging:europe-west1:laced-master-instance=tcp:5433"
+alias dbstagingread="~/cloud_sql_proxy -instances=laced-staging:europe-west1:laced-analytics-replica=tcp:5435"
 alias dbpreview="~/cloud_sql_proxy -instances=laced-preview:europe-west1:laced-master-instance=tcp:5433"
 alias cddot="cd ~/.dotfiles"
 alias tf="terraform"
 alias tfp="terraform plan"
 alias rspecf="rspec \$(fzf)"
 alias git-ssh="git remote set-url origin git@github.com:\$(git remote get-url origin | sed 's/https:\/\/github.com\///' | sed 's/git@github.com://')"
+alias gp="git push"
+alias gfp="git fetch && git pull"
+alias gd="git checkout $(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')"
+alias ghpr="gh pr create --web"
+alias gb="git checkout -b"
+alias br="~/Documents/GitHub/tcop-cli/bin/run"
+# alias tcop-cli="~/Documents/GitHub/tcop-cli/bin/run"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 bindkey -v
@@ -78,6 +87,7 @@ export NVM_DIR="$HOME/.nvm"
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
+export DISABLE_SPRING=true
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 ulimit -Sn 10240
@@ -86,3 +96,8 @@ ulimit -Sn 10240
 HEROKU_AC_ZSH_SETUP_PATH=/Users/kal/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
 export GPG_TTY=/dev/ttys003
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+eval eval 
+eval 
+TCOP_CLI_AC_ZSH_SETUP_PATH=/Users/kal/Library/Caches/tcop-cli/autocomplete/zsh_setup && test -f $TCOP_CLI_AC_ZSH_SETUP_PATH && source $TCOP_CLI_AC_ZSH_SETUP_PATH; # tcop-cli autocomplete setup
+eval 
+TCOP_CLI_AC_ZSH_SETUP_PATH=/Users/kal/Library/Caches/tcop-cli/autocomplete/zsh_setup && test -f $TCOP_CLI_AC_ZSH_SETUP_PATH && source $TCOP_CLI_AC_ZSH_SETUP_PATH; # tcop-cli autocomplete setup
