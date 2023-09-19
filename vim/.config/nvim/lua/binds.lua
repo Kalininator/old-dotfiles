@@ -25,6 +25,8 @@ local binds = {
   {"n", "<leader>tf", '<cmd>:TestFile<CR>'}, 
   {"n", "<leader>tl", '<cmd>:TestLast<CR>'},
   {"n", "<leader>tv", '<cmd>:TestVisit<CR>'}, 
+  {"n", "<leader>Gs", '<cmd>:Git<CR>'}, 
+  {"n", "<leader>Gp", '<cmd>:Git push<CR>'}, 
   -- {'n', 'K', '<cmd>lua vim.diagnostic.open_float()<CR>'}, -- cursor hover
   {"n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>"}, -- cursor hover
   {"n", "<leader>gr", "<cmd>lua vim.lsp.buf.rename()<CR>"}, -- rename symbol
