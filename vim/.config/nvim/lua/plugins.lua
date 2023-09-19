@@ -92,6 +92,8 @@ return require("packer").startup(
     use "tpope/vim-bundler"
     use "tpope/vim-rails"
 
+    use "wuelnerdotexe/vim-astro"
+
     use {
       "kyazdani42/nvim-tree.lua",
       requires = {
